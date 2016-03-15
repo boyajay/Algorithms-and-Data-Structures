@@ -1,0 +1,11 @@
+# write a function that adds all the digits of a number, and repeats the process, until a single digit is reached
+class Solution(object):
+    def addDigits(self, num):
+        sum = 0
+        numStr = str(num)
+        for i in range(len(numStr)):
+            sum += int(numStr[i])
+        if len(str(sum)) == 1:
+            return sum
+        else:
+            return self.addDigits(sum)
